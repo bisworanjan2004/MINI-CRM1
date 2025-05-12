@@ -60,6 +60,11 @@ app.use("/api/reports", reportRoutes)
 app.use("/api/settings", settingRoutes)
 app.use("/api/upload", uploadRoutes)
 
+//sevver checking
+app.get("/", (req, res) => {
+  res.send("Server is running")
+})
+
 // Serve static files in production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../dist")))
